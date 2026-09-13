@@ -1,0 +1,22 @@
+{
+	"name": "Barber Rush Android",
+	"image": "mcr.microsoft.com/devcontainers/java:17-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installGradle": true,
+			"gradleVersion": "8.7"
+		}
+	},
+	"postCreateCommand": "bash scripts/setup-android-sdk.sh",
+	"remoteEnv": {
+		"ANDROID_HOME": "/usr/local/android-sdk",
+		"ANDROID_SDK_ROOT": "/usr/local/android-sdk",
+		"PATH": "${containerEnv:PATH}:/usr/local/android-sdk/cmdline-tools/latest/bin:/usr/local/android-sdk/platform-tools"
+	},
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb",
+		"storage": "32gb"
+	}
+}
